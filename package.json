@@ -1,0 +1,23 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "dpd user,posts and comments task",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konalm/dpd-task.git"
+  },
+  "author": "connor moore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konalm/dpd-task/issues"
+  },
+  "homepage": "https://github.com/konalm/dpd-task#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mysql": "^2.13.0"
+  }
+}
