@@ -44,9 +44,10 @@ app.get('/users', function(req, res) {
 
 app.get('/posts', function(req, res) {
   var conn = createConnection();
-  var sql = "SELECT * FROM posts WHERE userId = " + req.query.userId;
 
-  conn.query(sql, function(err, result) {
+  conn.query("SELECT * FROM posts WHERE userId = ?", req.query.userId,
+    function(err, result)
+  {
     if (err) {
       res.send('connection error');
       return;
@@ -60,9 +61,10 @@ app.get('/posts', function(req, res) {
 
 app.get('/comments', function(req, res) {
   var conn = createConnection();
-  var sql = "SELECT * FROM comments WHERE postId = " + req.query.postId;
 
-  conn.query(sql, function(err, result) {
+  conn.query("SELECT * FROM comments WHERE postId = ?", req.query.postId,
+    function(err, result)
+  {
     if (err) {
       res.send('connection error');
       return;
@@ -76,9 +78,10 @@ app.get('/comments', function(req, res) {
 
 app.get('/postUserId', function(req, res) {
   var conn = createConnection();
-  var sql = "SELECT userId FROM posts WHERE id = " + req.query.postId;
 
-  conn.query(sql, function(err, result) {
+  conn.query("SELECT userId FROM posts WHERE id = ?", req.query.postId,
+    function(err, result)
+  {
     if (err) {
       res.send('connection error');
       return;
